@@ -18,13 +18,13 @@ public class StageControls : MonoBehaviour
     public void PressPlayDesert()
     {
         LevelSelection.NextLevelBuildIndex = 1; // Desert Run
-        SceneManager.LoadScene(3);              // Information
+        SceneManager.LoadScene(4);              // Information
     }
 
     public void PressPlayIce()
     {
-        LevelSelection.NextLevelBuildIndex = 4; // Ice Run
-        SceneManager.LoadScene(3);              // Information
+        LevelSelection.NextLevelBuildIndex = 2; // Ice Run
+        SceneManager.LoadScene(4);              // Information
     }
 }
 
