@@ -12,14 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/DesertRun.unity
     guid: 2fd878cf687c649de95863f2e59c3511
   - enabled: 1
+    path: Assets/Scenes/IceRun.unity
+    guid: 78cb1866e4fad41a9863cf2626796330
+  - enabled: 1
     path: Assets/Scenes/StageSelect.unity
     guid: f64a5ccf94e484d0b99e4f7d0b176a9c
   - enabled: 1
     path: Assets/Scenes/Information.unity
     guid: 1c92e4251cc314af8ad74f1264c35423
   - enabled: 1
-    path: Assets/Scenes/IceRun.unity
-    guid: 78cb1866e4fad41a9863cf2626796330
+    path: Assets/Scenes/GameOver.unity
+    guid: 494719ea834dd4ef595564887fc04683
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

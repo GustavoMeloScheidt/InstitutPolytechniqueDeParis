@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalSpeed = 5;
     public float rightLimit = 5.5f;
     public float leftLimit = -5.5f;
-    [SerializeField] bool isRunning;
+     [SerializeField] bool isRunning;
+    /* [SerializeField] bool commingDown = false;
+    [SerializeField] bool isJumping = false;
+    public GameObject playerObject;  */
 
-    
     void Update()
     {
         if (isRunning == false)
@@ -20,8 +22,6 @@ public class PlayerMovement : MonoBehaviour
             isRunning = true;
             StartCoroutine(AddDistance());
         }
-
-
         //only do forward * playerSpeed won't work,
         // as the speed needs to be relative to the world around it and the game speed
         // we can think of delta as the game speed, but we also need to make it relative to the world around it, so "Space.World"
@@ -43,13 +43,44 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        /* if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            if (isJumping == false)
+            {
+                isJumping = true;
+                playerObject.GetComponent<Animator>().Play("Jump");
+                StartCoroutine(JumpSequence());
+                playerObject.GetComponent<Animator>().Play("Running");
+            }
+        }
+        if (isJumping == true)
+        {
+            if (commingDown == false)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * 3, Space.World);
+            }
+            if (commingDown == true)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * -3, Space.World);
+            }
+        } */
+
+
+        IEnumerator AddDistance()
+        {
+            yield return new WaitForSeconds(0.35f);
+            MasterLevelInfo.distanceRun += 1;
+            isRunning = false;
+        }
+
     }
 
-    IEnumerator AddDistance()
+    /* IEnumerator JumpSequence()
     {
-        yield return new WaitForSeconds(0.35f);
-        MasterLevelInfo.distanceRun += 1;
-        isRunning = false;
-    }    
-    
+        yield return new WaitForSeconds(0.5f);
+        commingDown = true;
+        yield return new WaitForSeconds(0.5f);
+        isJumping = false;
+        commingDown = false;
+    } */
 }
