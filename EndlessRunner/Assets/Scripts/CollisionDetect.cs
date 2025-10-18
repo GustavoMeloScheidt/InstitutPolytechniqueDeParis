@@ -27,6 +27,7 @@ public class CollisionDetect : MonoBehaviour
         thePlayer.GetComponent<PlayerMovement>().enabled = false; //to stop running
         playerAnimation.GetComponent<Animator>().Play("Stumble Backwards");
         mainCamera.GetComponent<Animator>().Play("CollisionCamera");
+        MasterLevelInfo.coinCount = 0;
         yield return new WaitForSeconds(0);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(4.5f);

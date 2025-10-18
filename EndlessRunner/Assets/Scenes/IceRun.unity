@@ -886,7 +886,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -68.2544, w: 0}
+  m_margin: {x: -28.853088, y: 0, z: -30.473305, w: -19.240112}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7845,7 +7845,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4f826afc0709a478491725f2563f7321, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11213,6 +11213,14 @@ PrefabInstance:
       value: -0.0344832
       objectReference: {fileID: 0}
     - target: {fileID: 1618622466449956613, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651910873892183546, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651910874711900122, guid: 330ccb941fa6927429b6f863e48b7395, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
