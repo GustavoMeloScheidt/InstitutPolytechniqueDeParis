@@ -7,7 +7,7 @@
 ## Features (maybe more in the future?)
 - **Two stages:** Desert Run & Ice Run  
 - **Stage selection menu** with loading screen  
-- **Player mechanics:** automatic running, horizontal lane switching, jumping  
+- **Player mechanics:** automatic running, horizontal lane switching, jumping (to be included)
 - **UI Screens:** Main Menu, Stage Select, Information  
 
 ---
