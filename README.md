@@ -10,15 +10,17 @@ This repository gathers projects developed during my **Master of Science in Comp
 - Tools: Unity, C#
 - Description: An endless runner with multiple stages (Desert Run & Ice Run), stage selection menu, loading screen, and player controls including speed, lane switching, and jumping.
 
-### 2. Medical Image Segmentation (VM-UNet 3D)
-- Type: Deep Learning, Medical Imaging
-- Tools: PyTorch, nnU-Net
-- Description: Implementation of a 3D VM-UNet architecture for brain tumor segmentation using the BraTS2021 dataset.
-
-### 3. Eigenfaces (PCA for Face Recognition)
+### 2. Facial Expression Classification (LBP + KNN)
+*(Social Robotics – ENSTA)*  
 - Type: Computer Vision
-- Tools: MATLAB / Python
-- Description: Implementation of eigenfaces using Principal Component Analysis on the Yale face database.
+- Tools: Python, scikit-image, scikit-learn
+- Description: Facial expression classifier using LBP features and KNN, applied on FER-2013 to analyze the limits of classical vision pipelines.
+
+### 3. Real-Time Facial Expression Recognition  
+*(Social Robotics – ENSTA)* 
+- Type: Real-Time Computer Vision
+- Tools: Python, OpenCV, Gradio, TensorFlow/Keras
+- Description: Real time webcam-based system comparing LBP+KNN, HOG+SVM, and mini-Xception (CNN), with benchmarking of latency and tiny accuracy.
 
 ---
 
