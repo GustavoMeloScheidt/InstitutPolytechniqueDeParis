@@ -72,8 +72,8 @@ public class TrackBot : Agent
         // Increment episode counter and reset cumulative reward
         CurrentEpisode++;
         CumulativeReward = 0f;
-        // Reset agent color to blue at the start of the episode
-        _renderer.material.color = Color.blue;
+        // Reset agent color to default color at the start of the episode
+        _renderer.material.color = new Color32(56, 56, 56, 255);
 
         // Randomize the starting configuration of agent and goal
         SpawnObjects();
@@ -244,7 +244,7 @@ public class TrackBot : Agent
             if (_renderer != null)
             {
                 // Assuming blue is the default color
-                _renderer.material.color = Color.blue;
+                _renderer.material.color = new Color32(56, 56, 56, 255);
             }
         }
     }
