@@ -195,7 +195,7 @@ TrackBot/
 
 ---
 
-## ▶Training the Agent
+## Training the Agent
 
 Run from terminal inside your Unity project:
 
@@ -206,4 +206,43 @@ mlagents-learn track_config.yaml --run-id=TrackBotRun1
 Then press **Play** in Unity.  
 Training will start automatically.
 
+--- 
 
+## Training Results (TensorBoard)
+
+During training, I monitored the agent using **TensorBoard**:
+
+```bash
+tensorboard --logdir results
+```
+### Cumulative Reward
+
+As training progresses, the average cumulative reward steadily increases from around -1.5 to almost +1.0, showing that the agent learns a stable and successful policy.
+
+<p align="center"> 
+  <img src="./images/Cumulative_Reward.png" width="70%"> 
+</p>
+
+The histogram also shifts from mostly negative rewards to a sharp peak around high positive values, meaning that most episodes end successfully:
+
+<p align="center"> 
+  <img src="./images/Cumulative_Reward_hist.png" width="70%"> 
+</p>
+
+### Episode Length
+The episode length decreases from ~700 steps to around 20–30 steps on average:
+<p align="center"> 
+  <img src="./images/Episode_Length.png" width="70%"> 
+</p>
+This means the agent not only reaches the goal more often, but also learns to do it faster, taking fewer steps per episode.
+
+### Policy & Value Loss
+The policy loss and value loss follow the typical PPO behaviour: they first grow while the agent explores, and then gradually decrease and stabilize as the policy converges.
+<p align="center"> 
+  <img src="./images/Losses.png" width="70%"> 
+</p>
+Overall, these curves confirm that:
+
+- The agent starts in a highly suboptimal regime (negative rewards, long episodes)
+- Training progressively improves the policy
+- The final policy is stable, high-reward, and sample-efficient for this environment.
