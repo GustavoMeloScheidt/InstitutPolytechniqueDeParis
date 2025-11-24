@@ -4,7 +4,7 @@ TrackBot is a reinforcement learning project built using **Unity** and **Unity M
 The environment was designed as a minimal yet pedagogically rich RL scenario, ideal for understanding **observations**, **reward shaping**, **agent locomotion**, and **multi-environment parallel training**.
 
 <p align="center">
-  <img src="/images/TrackBot.gif" width="85%">
+  <img src="./images/TrackBot.gif" width="85%">
 </p>
 
 ---
