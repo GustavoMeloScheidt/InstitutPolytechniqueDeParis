@@ -25,7 +25,7 @@ This repository gathers projects developed during my **Master of Science in Comp
 ### 4. TrackBot – Reinforcement Learning Navigation Agent (Unity ML-Agents)
 - Type: Reinforcement Learning / Game AI  
 - Tools: Unity, C#, ML-Agents, Python  
-- Description: A reinforcement learning agent trained to navigate toward a target using discrete actions (forward, turn left, turn right). Includes reward shaping, normalized vector observations, color-coded environment feedback, and support for multi-environment parallel training.  
+- Description: A reinforcement learning agent trained to navigate toward a target using discrete actions (forward, turn left, turn right). Includes reward shaping, normalized vector observations, color-coded environment feedback, and support for multi-environment parallel training. It includes a mobile version of the game. 
 
 
 ---

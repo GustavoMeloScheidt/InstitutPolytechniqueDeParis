@@ -246,3 +246,21 @@ Overall, these curves confirm that:
 - The agent starts in a highly suboptimal regime (negative rewards, long episodes)
 - Training progressively improves the policy
 - The final policy is stable, high-reward, and sample-efficient for this environment.
+
+--- 
+
+## Mobile Version (Android Joystick Build)
+
+This repository also includes an **Android mobile adaptation** of the TrackBot environment.
+
+In this version, the robot can be controlled manually using a **virtual on‑screen joystick**, where the player drags a touch‑controlled handle and the TrackBot moves smoothly in the exact direction of the drag.
+
+### Features of the Mobile Adaptation
+- Virtual joystick built with Unity UI  
+- Continuous directional control  
+- Smooth rotation aligned with joystick direction  
+- Physics‑based motion identical to desktop behavior  
+- Integrated seamlessly with the ML‑Agents setup  
+- Fully deployable Android build included in this project  
+
+The goal of this mobile version is to extend the RL environment to Human–Computer Interaction experiments and mobile usability studies, while maintaining all original RL mechanics.
