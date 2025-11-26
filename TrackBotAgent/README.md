@@ -1,7 +1,7 @@
 # TrackBot – Reinforcement Learning Environment (Unity + ML-Agents)
 
 TrackBot is a reinforcement learning project built using **Unity** and **Unity ML-Agents**, where a simple autonomous agent learns to **reach a target sphere** using only **forward motion** and **discrete left/right rotations**.  
-The environment was designed as a minimal yet pedagogically rich RL scenario, ideal for understanding **observations**, **reward shaping**, **agent locomotion**, and **multi-environment parallel training**.
+The environment was designed as a minimal yet rich RL scenario, with the purpose of understanding **observations**, **reward shaping**, **agent locomotion**, and **multi-environment parallel training**.
 
 <p align="center">
   <img src="./images/TrackBot.gif" width="85%">
@@ -179,10 +179,12 @@ TrackBot/
 │   ├── Models/
 │   ├── Materials/
 │   └── Scenes/
+        ├── Mobile.Unity
 │       └── SampleScene.unity
 │
-├── track_config.yaml
-└── README.md  (this file)
+├── Config/
+│   └── track_config.yaml
+└── README.md  
 ```
 
 ---
