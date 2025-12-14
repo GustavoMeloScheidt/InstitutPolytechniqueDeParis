@@ -137,15 +137,19 @@ This setup is **continuous**:
 
 ## Tested On
 
-- macOS (Apple Silicon)
+- macOS (Apple Silicon) 
 - Choregraphe 2.8.8
 - NAO Simulation
 - Python 3.x
 - MediaPipe (CPU backend)
+
+Note: On macOS, the only way I found to launch the Choregraphe software was using the terminal and launching it directly using: 
+```
+/Applications/Choregraphe\ 10.42.17.app/Contents/MacOS/choregraphe 
+```
 ---
 
 ## Future Improvements
-
-	- ML-based gesture classification (as of right now, the accuracy is still limited with MediaPipe)
+  - ML-based gesture classification (as of right now, the accuracy is still limited with MediaPipe)
   - Gesture to start/finish sentences
   - Extra animations on NAO   
