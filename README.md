@@ -27,6 +27,11 @@ This repository gathers projects developed during my **Master of Science in Comp
 - Tools: Unity, C#, ML-Agents, Python  
 - Description: A reinforcement learning agent trained to navigate toward a target using discrete actions (forward, turn left, turn right). Includes reward shaping, normalized vector observations, color-coded environment feedback, and support for multi-environment parallel training. It includes a mobile version of the game. 
 
+### 5. Real-Time ASL Gesture Recognition → NAO Robot (MediaPipe + Choregraphe)
+*(Social Robotics – ENSTA)* 
+- Type: Human–Robot Interaction / Computer Vision
+- Tools: Python, MediaPipe, OpenCV, Sockets, NAOqi, Choregraphe
+- Description: A real-time American Sign Language (ASL) recognition system using a webcam-based hand tracking pipeline (MediaPipe Hands) with connection to the NAO Robot to provide speech and animations. 
 
 ---
 
