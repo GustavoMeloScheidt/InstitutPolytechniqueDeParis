@@ -1,4 +1,4 @@
-# 🖐️ ASL Hand Gesture Recognition with NAO (Choregraphe)
+# ASL Hand Gesture Recognition with NAO (Choregraphe)
 
 This project implements a **real-time ASL hand gesture recognition system** using **MediaPipe** and **OpenCV**, streaming recognized gestures to a **NAO robot (or NAO Simulation)**.
 The NAO receives gestures continuously and reacts using **ALTextToSpeech**.
@@ -23,7 +23,7 @@ The NAO receives gestures continuously and reacts using **ALTextToSpeech**.
 ```
 Webcam
   ↓
-asl_sign_recognition.py
+sign_recognition.py
 (MediaPipe + OpenCV)
   ↓  TCP Socket (port 6000)
 SignalReceiver (Choregraphe Python Box)
@@ -77,16 +77,7 @@ pip install opencv-python mediapipe
 Run on your computer:
 
 ```bash
-python asl_sign_recognition.py
-```
-
-Expected output (example):
-
-```text
-Gesture server: waiting for NAO...
-Connected with: ('127.0.0.1', XXXXX)
-=== Gesture recognition running ===
-Move your hand and NAO will receive gestures continuously.
+python sign_recognition.py
 ```
 
 A webcam window will open:
@@ -123,7 +114,7 @@ You should hear:
 
 ```text
 "Trying to connect to the gesture server"
-"Connected. Waiting for gestures"
+"Connected successfully.
 ```
 
 Then, for each received gesture, NAO will speak it.
@@ -154,6 +145,7 @@ This setup is **continuous**:
 ---
 
 ## Future Improvements
-	•	ML-based gesture classification (as of right now, the accuracy is still limited with MediaPipe)
-  •	Gesture to start/finish sentences
-  •	Extra animations on NAO   
+
+	- ML-based gesture classification (as of right now, the accuracy is still limited with MediaPipe)
+  - Gesture to start/finish sentences
+  - Extra animations on NAO   
