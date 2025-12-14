@@ -39,6 +39,7 @@ This repository gathers projects developed during my **Master of Science in Comp
 - **Game Development:** Unity (C#)
 - **Machine Learning / Deep Learning:** Python, PyTorch
 - **Reinforcement Learning:** Unity ML-Agents (PPO)  
+- **Human–Robot Interaction:** ROS, NAOqi, Choregraphe
 - **Mathematical Modelling:** MATLAB, NumPy, SciPy
 - **Version Control:** Git & GitHub
 
