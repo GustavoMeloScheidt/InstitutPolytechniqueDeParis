@@ -28,7 +28,7 @@ Features:
 
 ## Augmented Reality Mode (AR)
 
-This project is not only a 3D chess game — it is **adapted for Augmented Reality**.
+This project is not only a 3D chess game, it is **adapted for Augmented Reality**.
 
 In AR mode, you can:
 - **Place the chessboard on a real-world surface**
