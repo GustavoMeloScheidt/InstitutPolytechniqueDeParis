@@ -1,7 +1,7 @@
 # ASL Hand Gesture Recognition with NAO (Choregraphe)
 
-This project implements a **real-time ASL hand gesture recognition system** using **MediaPipe** and **OpenCV**, streaming recognized gestures to a **NAO robot (or NAO Simulation)**.
-The NAO receives gestures continuously and reacts using **ALTextToSpeech**.
+This project implements a **real-time ASL hand gesture recognition system** using **MediaPipe** and **OpenCV**, streaming recognized gestures to a **NAO robot (or NAO Simulation)**
+The NAO receives gestures continuously and reacts using **ALTextToSpeech**
 
 ---
 
