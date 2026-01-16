@@ -41,7 +41,6 @@ ASL_SignLanguage/
 ├── sign_detection.py        # MediaPipe + gesture server (Python 3)
 ├── README.md                # Project documentation
 ├── SignalReceiver.py        # NAO Choregraphe Python box script
-
 │
 └── NAOsimulation/
     └── #Files from the Choregraphe software 
