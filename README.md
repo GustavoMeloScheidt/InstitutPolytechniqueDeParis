@@ -33,6 +33,11 @@ This repository gathers projects developed during my **Master of Science in Comp
 - Tools: Python, MediaPipe, OpenCV, Sockets, NAOqi, Choregraphe
 - Description: A real-time American Sign Language (ASL) recognition system using a webcam-based hand tracking pipeline (MediaPipe Hands) with connection to the NAO Robot to provide speech and animations. 
 
+### 6. Chess AR (Unity) — Augmented Reality Chess + AI Bot
+- Type: Game Development / Augmented Reality / AI Gameplay
+- Tools: Unity, C#, (AR-ready), (AI-trained bot)
+- Description: A modern chess game built in Unity with smooth drag-and-drop piece interaction, tile hover highlighting, and captured-piece handling (captured pieces are moved to the board margins and scaled down). The project is adapted for Augmented Reality (AR) gameplay and includes the option to play against an AI-trained chess bot.
+
 ---
 
 ## Tech Stack
