@@ -57,7 +57,7 @@ public class Chessboard : MonoBehaviour
         SpawnAllPieces();
         PositionAllPieces();
     }
-    private void Update()
+    private void UpdateORIG()
     {
         if (!currentCamera)
         {
@@ -153,7 +153,7 @@ public class Chessboard : MonoBehaviour
     }
     
     //Correção do GPT
-    private void Update123()
+    private void Update()
     {
         if (!currentCamera)
         {
@@ -161,91 +161,107 @@ public class Chessboard : MonoBehaviour
             return;
         }
 
-        RaycastHit info;
         Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
 
-        // ----- HOVER / CLICK LOGIC -----
-        if (Physics.Raycast(ray, out info, 100, LayerMask.GetMask("Tile", "Hover")))
+        // Raycast apenas em tiles (inclusive tiles em Hover/Highlight)
+        RaycastHit info;
+        bool hitTile = Physics.Raycast(ray, out info, 100, LayerMask.GetMask("Tile", "Hover", "Highlight"));
+
+        if (hitTile)
         {
             Vector2Int hitPosition = LookupTileIndex(info.transform.gameObject);
 
-            // Se acertou algo que não é tile válido, sai e reseta hover
-            if (hitPosition == -Vector2Int.one)
+            // --- HOVER (entrar / trocar / manter) ---
+            if (currentHover == -Vector2Int.one)
             {
-                ClearHover();
+                // primeiro hover
+                currentHover = hitPosition;
+                tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
             }
-            else
+            else if (currentHover != hitPosition)
             {
-                // First time hover
-                if (currentHover == -Vector2Int.one)
-                {
-                    currentHover = hitPosition;
-                    tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
-                }
-                // Hover mudou de tile
-                else if (currentHover != hitPosition)
-                {
-                    tiles[currentHover.x, currentHover.y].layer = LayerMask.NameToLayer("Tile");
-                    currentHover = hitPosition;
-                    tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
-                }
+                // saiu de um tile e entrou em outro: restaura o anterior
+                tiles[currentHover.x, currentHover.y].layer =
+                    ContainsValidMove(ref availableMoves, currentHover)
+                        ? LayerMask.NameToLayer("Highlight")
+                        : LayerMask.NameToLayer("Tile");
 
-                // Mouse down: pegar peça
-                if (Input.GetMouseButtonDown(0))
+                // aplica hover no novo
+                currentHover = hitPosition;
+                tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
+            }
+
+            // --- CLICK DOWN (selecionar peça) ---
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (chessPieces[hitPosition.x, hitPosition.y] != null)
                 {
-                    if (chessPieces[hitPosition.x, hitPosition.y] != null)
+                    bool isOurTurn =
+                        (chessPieces[hitPosition.x, hitPosition.y].team == 0 && isWhiteTurn) ||
+                        (chessPieces[hitPosition.x, hitPosition.y].team == 1 && !isWhiteTurn);
+
+                    if (isOurTurn)
                     {
                         currentlyDragging = chessPieces[hitPosition.x, hitPosition.y];
+
+                        availableMoves = currentlyDragging.GetAvailableMoves(ref chessPieces, TILE_COUNT_X, TILE_COUNT_Y);
+                        specialMove = currentlyDragging.GetSpecialMoves(ref chessPieces, ref moveList, ref availableMoves);
+
+                        HighlightTiles();
                     }
                 }
+            }
 
-                // Mouse up: soltar peça
-                if (currentlyDragging != null && Input.GetMouseButtonUp(0))
-                {
-                    Vector2Int previousPosition = new Vector2Int(currentlyDragging.currentX, currentlyDragging.currentY);
+            // --- RELEASE (tentar mover) ---
+            if (currentlyDragging != null && Input.GetMouseButtonUp(0))
+            {
+                Vector2Int previousPosition = new Vector2Int(currentlyDragging.currentX, currentlyDragging.currentY);
 
-                    bool validMove = MoveTo(currentlyDragging, hitPosition.x, hitPosition.y);
-                    if (!validMove)
-                    {
-                        currentlyDragging.SetPosition(GetTileCenter(previousPosition.x, previousPosition.y));
-                    }
+                bool validMove = MoveTo(currentlyDragging, hitPosition.x, hitPosition.y);
+                if (!validMove)
+                    currentlyDragging.SetPosition(GetTileCenter(previousPosition.x, previousPosition.y));
 
-                    currentlyDragging = null;
-                }
+                currentlyDragging = null;
+                RemoveHighlightTiles();
+
+                // IMPORTANTE: depois de remover highlight, restaura o hover atual (se quiser manter hover)
+                // Mantemos o tile como Hover se o mouse ainda está em cima dele:
+                tiles[hitPosition.x, hitPosition.y].layer = LayerMask.NameToLayer("Hover");
+                currentHover = hitPosition;
             }
         }
         else
         {
-            // IMPORTANTÍSSIMO: esse else é do Raycast (quando não está em cima de um tile)
-            ClearHover();
+            // --- NÃO estamos sobre um tile: limpa hover ---
+            if (currentHover != -Vector2Int.one)
+            {
+                tiles[currentHover.x, currentHover.y].layer =
+                    ContainsValidMove(ref availableMoves, currentHover)
+                        ? LayerMask.NameToLayer("Highlight")
+                        : LayerMask.NameToLayer("Tile");
 
+                currentHover = -Vector2Int.one;
+            }
+
+            // soltou fora do tabuleiro enquanto arrastava
             if (currentlyDragging != null && Input.GetMouseButtonUp(0))
             {
                 currentlyDragging.SetPosition(GetTileCenter(currentlyDragging.currentX, currentlyDragging.currentY));
                 currentlyDragging = null;
+                RemoveHighlightTiles();
             }
         }
 
-        // ----- DRAG LOGIC -----
+        // --- DRAG (independente de estar em cima do tabuleiro) ---
         if (currentlyDragging != null)
         {
             Plane horizontalPlane = new Plane(Vector3.up, Vector3.up * yOffset);
-            float distance = 0.0f;
-            if (horizontalPlane.Raycast(ray, out distance))
+            if (horizontalPlane.Raycast(ray, out float distance))
             {
                 currentlyDragging.SetPosition(ray.GetPoint(distance) + Vector3.up * dragOffset);
             }
         }
     }
-    private void ClearHover()
-    {
-        if (currentHover != -Vector2Int.one)
-        {
-            tiles[currentHover.x, currentHover.y].layer = LayerMask.NameToLayer("Tile");
-            currentHover = -Vector2Int.one;
-        }
-    }
-
 
     //Board Generation
     private void GenerateAllTiles(float tileSize, int tileCountX, int tileCountY)

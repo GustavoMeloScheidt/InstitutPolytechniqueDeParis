@@ -60,9 +60,9 @@ public class Pawn : ChessPiece
                                 availableMoves.Add(new Vector2Int(currentX - 1, currentY + direction));
                                 return SpecialMove.EnPassant;
                             }
-                            if (lastMove[1].x == currentX - 1) //Landed right
+                            if (lastMove[1].x == currentX + 1) //Landed right
                             {
-                                availableMoves.Add(new Vector2Int(currentX - 1, currentY + direction));
+                                availableMoves.Add(new Vector2Int(currentX + 1, currentY + direction));
                                 return SpecialMove.EnPassant;
                             }
                         }
