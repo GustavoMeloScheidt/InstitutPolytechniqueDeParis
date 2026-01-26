@@ -1,0 +1,74 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# =========================
+# Unity cache / artifacts
+# =========================
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.VC.opendb
+
+# =========================
+# Unity meta cache
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Addressables / Shader cache
+# =========================
+/Library/com.unity.addressables/
+/Library/ShaderCache/
+/Library/ShaderCache.db
+
+# =========================
+# JetBrains / VS Code
+# =========================
+.idea/
+.vscode/
+*.code-workspace
+
+# =========================
+# Android / Meta Quest
+# =========================
+.gradle/
+.local.properties
+.gradle/
+*.apk
+*.aab
+
+# =========================
+# Crash reports
+# =========================
+sysinfo.txt
+
+# =========================
+# Unity Hub
+# =========================
+UnityHub.log
+
+# =========================
+# XR / Meta cache
+# =========================
+OVRBuildCache/

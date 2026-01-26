@@ -38,14 +38,20 @@ This repository gathers projects developed during my **Master of Science in Comp
 - Tools: Unity, C#, (AR-ready), (AI-trained bot)
 - Description: A modern chess game built in Unity with smooth drag-and-drop piece interaction, tile hover highlighting, and captured-piece handling (captured pieces are moved to the board margins and scaled down). The project is adapted for Augmented Reality (AR) gameplay and includes the option to play against an AI-trained chess bot.
 
+### 7. Whack-A-Mole VR (Meta Quest)
+- Type: Virtual Reality / Game Development  
+- Tools: Unity, C#, Meta Quest, Meta XR (OVR)  
+- Description: A virtual reality Whack-A-Mole game developed for Meta Quest, where the player physically grabs and swings a hammer to hit moles as they pop out of holes. The project focuses on VR interaction, trigger-based collision handling, and real-time gameplay logic, serving as a practical introduction to immersive VR mechanics and user interaction in Unity.
+
 ---
 
 ## Tech Stack
-- **Game Development:** Unity (C#)
 - **Machine Learning / Deep Learning:** Python, PyTorch
-- **Reinforcement Learning:** Unity ML-Agents (PPO)  
-- **Human–Robot Interaction:** ROS, NAOqi, Choregraphe
+- **Reinforcement Learning:** Unity ML-Agents (PPO)
 - **Mathematical Modelling:** MATLAB, NumPy, SciPy
+- **Human–Robot Interaction:** ROS, NAOqi, Choregraphe
+- **Virtual & Augmented Reality (XR):** Meta Quest, Meta XR (OVR), OpenXR
+- **Game Development:** Unity (C#)
 - **Version Control:** Git & GitHub
 
 ---
