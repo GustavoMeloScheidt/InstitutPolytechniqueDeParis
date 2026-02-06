@@ -3,7 +3,7 @@
 An augmented reality furniture visualization app for iOS built with Unity 6 and AR Foundation. Place, move, rotate, and scale 3D furniture on detected floor surfaces.
 
 <p align="center">
-  <img src="./Assets/Images/FurniView.gif" width="85%">
+  <img src="./Assets/Images/FurniView.mp4" width="85%">
 </p>
 
 ## Features
