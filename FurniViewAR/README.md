@@ -4,7 +4,7 @@ An augmented reality furniture visualization app for iOS built with Unity 6 and 
 
 <p align="center">
   <a href="./Assets/Images/FurniView.mp4">
-    <img src="./Assets/Images/FurniView_thumb.png" width="85%" />
+    <img src="./Assets/Images/FurniView_thumb.png" width="420" />
   </a>
 </p>
 
